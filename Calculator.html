@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <style>
+        /* Calculator Styles */
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+button:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 10px 15px;
+    font-size: 20px;
+    color: turquoise;
+    cursor: pointer;
+}
+
+.calculator {
+    display: inline-block;
+    background: #17181a;
+    padding: 25px 20px;
+    margin-top: 2rem;
+    width: 350px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: #3bae3f;
+    background-color: #121314;
+}
+
+table {
+    margin: auto;
+    margin-top: 10px !important;
+}
+
+table tr td {
+    padding: 10px 12px;
+    background: repeating-linear-gradient(320deg, black, transparent 100px);
+}
+
+/* Additional button styling */
+button#equal {
+    background-color: #3bae3f;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button#clearEntry {
+    background-color: #ff7f7f;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button#clear {
+    background-color: #ffa500;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 576px) {
+    .calculator {
+        width: 100%;
+    }
+    input {
+        font-size: 18px;
+    }
+    button {
+        font-size: 18px;
+    }
+}
+
+    </style>
+</head>
+<body>
+<div class="container pt-5">
+    <div class="row ">
+        <div class="col text-center">
+            <div class="calculator">
+                <div class="outInArea">
+                    <input type="text" name="inputOutput" id="input">
+                    <table>
+                        <!-- Calculator buttons -->
+                        <tr>
+                            <td><button id="clear">C</button></td>
+                            <td><button>/</button></td>
+                            <td><button>X</button></td>
+                            <td><button>-</button></td>
+                        </tr>
+                        <tr>
+                            <td><button>7</button></td>
+                            <td><button>8</button></td>
+                            <td><button>9</button></td>
+                            <td><button>+</button></td>
+                        </tr>
+                        <tr>
+                            <td><button>4</button></td>
+                            <td><button>5</button></td>
+                            <td><button>6</button></td>
+                            <td rowspan="2"><button id="equal">=</button></td>
+                        </tr>
+                        <tr>
+                            <td><button>1</button></td>
+                            <td><button>2</button></td>
+                            <td><button>3</button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button>0</button></td>
+                            <td><button>.</button></td>
+                            <td><button id="clearEntry">CE</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const input = document.getElementById('input');
+    const clear = document.getElementById('clear');
+    const clearEntry = document.getElementById('clearEntry');
+    const equal = document.getElementById('equal');
+    const allButtons = document.querySelectorAll('button');
+
+    allButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const buttonText = button.innerText;
+
+            if (buttonText === 'C') {
+                input.value = '';
+            } else if (buttonText === '=') {
+                try {
+                    input.value = eval(input.value);
+                } catch (error) {
+                    input.value = 'Error';
+                }
+            } else if (buttonText === 'CE') {
+                input.value = input.value.slice(0, -1);
+            } else {
+                input.value += buttonText;
+            }
+        });
+    });
+</script>
+</body>
+</html>
