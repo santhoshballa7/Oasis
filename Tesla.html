@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page - Nikola Tesla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Libre Franklin', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-weight: 400;
+            color: #333;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        /* Header section */
+        .banner {
+            background-color: #333;
+            color: #fff;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .tribute-badge {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+
+        /* Scroll down button */
+        #scroll-down {
+            position: relative;
+            top: 10px; /* Adjust the desired distance from the top */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            z-index: 1; /* Ensure the button is on top of other content */
+        }
+
+        /* Second section */
+        .quote {
+            background-color: #fff;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quote h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .img-div {
+            margin-top: 20px;
+        }
+
+        .img-div img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Up and Down navigation */
+        .up-down {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .scroll-down,
+        .scroll-up {
+            font-size: 2rem;
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .scroll-down:hover,
+        .scroll-up:hover {
+            color: #333;
+        }
+
+        /* Biography section */
+        .biography {
+            background-color: #333;
+            color: #fff;
+            padding: 3rem;
+        }
+
+        .biography h3 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .bio {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            color: #333; /* Added text color */
+        }
+
+        .bio h4 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .bio p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        /* Quote section */
+.quote {
+    background-color: #fff;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quote h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.quote img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+</head>
+
+<body>
+    <section class="banner" id="front-page">
+        <div class="container">
+            <span class="tribute-badge">Tribute to</span>
+            <h1>Nikola Tesla</h1>
+        </div>
+        <a id="scroll-down" href="#second-page"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="quote" id="second-page">
+        <div class="container">
+            <span class="tribute-badge">Quote</span>
+            <h2>“If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.”</h2>
+            <div class="img-div">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/N.Tesla.JPG/468px-N.Tesla.JPG"
+                    alt="Nikola Tesla">
+            </div>
+        </div>
+        <div class="up-down">
+            <div>
+                <a class="scroll-up" href="#front-page"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <a class="scroll-down" href="#third-page"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="biography" id="third-page">
+        <div class="container">
+            <h3>Biography</h3>
+            <div class="bio">
+                <div>
+                    <h4>Early Life</h4>
+                    <p>Famous Serbian-American inventor Nikola Tesla was born on July 10, 1856, in what is now Smiljan,
+                        Croatia. Tesla's interest in electrical invention was likely spurred by his mother, Djuka Mandic,
+                        who invented small household appliances in her spare time while her son was growing up. Tesla's
+                        father, Milutin Tesla, was a priest. After studying in the 1870s at the Realschule, Karlstadt
+                        (later renamed the Johann-Rudolph-Glauber Realschule Karlstadt); the Polytechnic Institute in
+                        Graz, Austria; and the University of Prague, Tesla began preparing for a trip to America.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
